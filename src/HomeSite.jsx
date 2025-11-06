@@ -33,11 +33,7 @@ export default function HomeSite() {
     <div className="homesite-container">
       {/* Background Video */}
       <video className="background-video" autoPlay loop muted playsInline>
-<<<<<<< Updated upstream
-        \text{<source src="VideoMobileFinales.mp4" type="video/mp4" />}
-=======
-        $$\text{<source src="VideoMobileFinales.mp4" type="video/mp4" />}$$
->>>>>>> Stashed changes
+          \text{<source src="VideoMobileFinales.mp4" type="video/mp4" />}
       </video>
 
       {/* Centered Changing Text */}
