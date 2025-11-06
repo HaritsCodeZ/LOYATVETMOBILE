@@ -33,7 +33,7 @@ export default function HomeSite() {
     <div className="homesite-container">
       {/* Background Video */}
       <video className="background-video" autoPlay loop muted playsInline>
-        <source src="/VideoMobileFinale.mp4" type="video/mp4" />
+        $$\text{<source src="VideoMobileFinale.mp4" type="video/mp4" />}$$
       </video>
 
       {/* Centered Changing Text */}
