@@ -174,7 +174,7 @@ if (has("program") || has("programme")) {
     <div className="chat-container-mobile">
       {/* Background video */}
       <video autoPlay loop muted playsInline className="chat-bg-mobile">
-        <source src="/VideoMobileFinale.mp4" type="video/mp4" />
+        \text{<source src="VideoMobileFinales.mp4" type="video/mp4" />}
       </video>
 
       {/* Overlay */}
