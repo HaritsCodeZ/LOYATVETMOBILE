@@ -30,11 +30,7 @@ export default function HomeSite() {
   };
 
   return (
-    <div className="homesite-container">
-      {/* Background Video */}
-      <video className="background-video" autoPlay loop muted playsInline>
-          \text{<source src="VideoMobileFinales.mp4" type="video/mp4" />}
-      </video>
+       <img className="background-video" src="FinaleBackImage.png" alt="Background Image" />
 
       {/* Centered Changing Text */}
       <div className="center-text">
