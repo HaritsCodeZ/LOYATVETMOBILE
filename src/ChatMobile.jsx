@@ -25,17 +25,17 @@ export default function ChatMobile() {
     const has = (w) => tokens.has(w);
 
     const enHints = [
-      "what","who","where","when","why","how","admission","fee","fees",
-      "scholarship","hostel","contact","address","requirement","requirements",
-      "recognition","duration","courses","hall","assembly","management",
-      "director","rules","vehicle","parking","routine","phone","email",
-      "website","social"
+      "what", "who", "where", "when", "why", "how", "admission", "fee", "fees",
+      "scholarship", "hostel", "contact", "address", "requirement", "requirements",
+      "recognition", "duration", "courses", "hall", "assembly", "management",
+      "director", "rules", "vehicle", "parking", "routine", "phone", "email",
+      "website", "social"
     ];
     const msHints = [
-      "apa","siapa","mana","bila","kenapa","bagaimana","kemasukan","yuran",
-      "biasiswa","asrama","hubungi","alamat","syarat","iktiraf","tempoh",
-      "kursus","dewan","perhimpunan","pengurusan","pengarah","peraturan",
-      "kenderaan","jadual","telefon","emel","laman","sosial"
+      "apa", "siapa", "mana", "bila", "kenapa", "bagaimana", "kemasukan", "yuran",
+      "biasiswa", "asrama", "hubungi", "alamat", "syarat", "iktiraf", "tempoh",
+      "kursus", "dewan", "perhimpunan", "pengurusan", "pengarah", "peraturan",
+      "kenderaan", "jadual", "telefon", "emel", "laman", "sosial"
     ];
 
     const enScore = enHints.reduce((s, w) => s + (has(w) ? 1 : 0), 0);
@@ -103,31 +103,28 @@ export default function ChatMobile() {
         "The KVB hall is used for assemblies, official programs, and student activities."
       );
 
-// *** FIX APPLIED HERE: Replaced \n with <br/> and ensures all keywords are lowercase ***
-if (has("program") || has("programme")) {
- return R(
+    if (has("program") || has("programme"))
+      return R(
         "Di Kolej Vokasional Betong, terdapat 8 program yang menarik iaitu program:<br/>" +
-        "* Teknologi Kimpalan<br/>" +
-        "* Teknologi Elektrik<br/>" +
-        "* Teknologi Sistem Komputer Dan Rangkaian<br/>" +
-        "* Perakaunan<br/>" +
-        "* Teknologi Pemesinan Industri<br/>" +
-        "* Teknologi Pembinaan<br/>" +
-        "* Hospitaliti Seni Kulinari<br/>" +
-        "* Teknologi Automotif", 
-
+          "* Teknologi Kimpalan<br/>" +
+          "* Teknologi Elektrik<br/>" +
+          "* Teknologi Sistem Komputer Dan Rangkaian<br/>" +
+          "* Perakaunan<br/>" +
+          "* Teknologi Pemesinan Industri<br/>" +
+          "* Teknologi Pembinaan<br/>" +
+          "* Hospitaliti Seni Kulinari<br/>" +
+          "* Teknologi Automotif",
         "In Betong Vocational College, there are 8 exciting programs, which are:<br/>" +
-        "* Welding Technology<br/>" +
-        "* Electrical Technology<br/>" +
-        "* Computer System and Network Technology<br/>" +
-        "* Accounting<br/>" +
-        "* Industrial Machining Technology<br/>" +
-        "* Construction Technology<br/>" +
-        "* Hospitality Culinary Arts<br/>" +
-        "* Automotive Technology"
-);
-}
-    
+          "* Welding Technology<br/>" +
+          "* Electrical Technology<br/>" +
+          "* Computer System and Network Technology<br/>" +
+          "* Accounting<br/>" +
+          "* Industrial Machining Technology<br/>" +
+          "* Construction Technology<br/>" +
+          "* Hospitality Culinary Arts<br/>" +
+          "* Automotive Technology"
+      );
+
     if (has("tempoh") || has("duration"))
       return R(
         "Tempoh pengajian biasanya antara 2 hingga 3 tahun bergantung pada program.",
@@ -138,8 +135,6 @@ if (has("program") || has("programme")) {
       "Sistem ini menyokong soalan berkaitan KVB dan TVET. Cuba: 'apa itu KVB', 'syarat masuk DVM', atau 'dewan KVB'.",
       "This system answers KVB and TVET related questions. Try: 'what is KVB', 'DVM requirements', or 'KVB halls'."
     );
-
-    
   };
 
   const simulateBotReply = (question) => {
@@ -169,24 +164,17 @@ if (has("program") || has("programme")) {
     setInput("");
   };
 
-  // === UI ===
   return (
     <div className="chat-container-mobile">
-      {/* Background video */}
-      <video autoPlay loop muted playsInline className="chat-bg-mobile">
-        \text{<source src="VideoMobileFinales.mp4" type="video/mp4" />}
-      </video>
-
-      {/* Overlay */}
+      <img className="chat-bg-mobile" src="FinaleBackImage.png" alt="Background" />
       <div className="chat-overlay-mobile"></div>
 
-      {/* Header with logo and flipping text */}
       <div className="chat-header-mobile">
         <img
           src="/Logo Loya TVET.png"
           alt="Loya TVET Logo"
           className="tvet-logo-mobile"
-          onClick={() => navigate("/")} // 🧭 navigate back to HomeSite.jsx
+          onClick={() => navigate("/")}
         />
         <div className="flipping-text-mobile">
           <span className="flip">Anda tanya, LOYA TVET jawab</span>
@@ -195,14 +183,13 @@ if (has("program") || has("programme")) {
         </div>
       </div>
 
-      {/* Chat body */}
       <div className="chat-body-mobile">
         {messages.map((msg, i) => (
-          <div 
-  key={i} 
-  className={`chat-bubble-mobile ${msg.from}`}
-  dangerouslySetInnerHTML={{ __html: msg.text }} // <-- NEW: Renders HTML tags like <br/>
-/>
+          <div
+            key={i}
+            className={`chat-bubble-mobile ${msg.from}`}
+            dangerouslySetInnerHTML={{ __html: msg.text }}
+          />
         ))}
         {typing && (
           <div className="typing-indicator-mobile">
@@ -212,7 +199,6 @@ if (has("program") || has("programme")) {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input area */}
       <div className="chat-input-area-mobile">
         <input
           className="chat-input-mobile"
@@ -220,7 +206,7 @@ if (has("program") || has("programme")) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSend()}
-          placeholder="Nyatakan soalan anda disini !"
+          placeholder="Nyatakan soalan anda di sini!"
         />
         <button className="chat-send-mobile" onClick={handleSend}>
           ➤
