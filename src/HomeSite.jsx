@@ -30,46 +30,41 @@ export default function HomeSite() {
   };
 
   return (
+    // RESTORE THE SINGLE ROOT DIV
     <div className="homesite-container">
-      {/* Background Video */}
-      <video className="background-video" autoPlay loop muted playsInline>
-<<<<<<< Updated upstream
-        \text{<source src="VideoMobileFinales.mp4" type="video/mp4" />}
-=======
-        $$\text{<source src="VideoMobileFinales.mp4" type="video/mp4" />}$$
->>>>>>> Stashed changes
-      </video>
+        {/* Background Image (Static) */}
+        <img className="background-video" src="FinaleBackImage.png" alt="Background Image" />
 
-      {/* Centered Changing Text */}
-      <div className="center-text">
-        <h2>{messages[current]}</h2>
-      </div>
-
-      {/* Glass Bubbles Section */}
-      <div className="bubble-container">
-        <div className="bubble-row">
-          <div className="glass-bubble">Hubungi Kami</div>
-          <div className="glass-bubble">Pasukan Kami</div>
+        {/* Centered Changing Text */}
+        <div className="center-text">
+            <h2>{messages[current]}</h2>
         </div>
-        <div className="bubble-row single">
-          <div className="glass-bubble">Kolej Kami</div>
-        </div>
-      </div>
 
-      {/* Floating Input Bar */}
-      <div className="ai-input-bar">
-        <input
-          type="text"
-          className="ai-input-field"
-          placeholder="Tulis mesej anda di sini..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && handleSend()} // ✅ Enter triggers send
-        />
-        <button className="ai-send-btn" onClick={handleSend}>
-          ➤
-        </button>
-      </div>
+        {/* Glass Bubbles Section */}
+        <div className="bubble-container">
+            <div className="bubble-row">
+                <div className="glass-bubble">Hubungi Kami</div>
+                <div className="glass-bubble">Pasukan Kami</div>
+            </div>
+            <div className="bubble-row single">
+                <div className="glass-bubble">Kolej Kami</div>
+            </div>
+        </div>
+
+        {/* Floating Input Bar */}
+        <div className="ai-input-bar">
+            <input
+                type="text"
+                className="ai-input-field"
+                placeholder="Tulis mesej anda di sini..."
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleSend()} // ✅ Enter triggers send
+            />
+            <button className="ai-send-btn" onClick={handleSend}>
+                ➤
+            </button>
+        </div>
     </div>
-  );
+)
 }
