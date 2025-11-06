@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
+  // ADD THIS LINE TO FIX THE DEPLOYMENT PATH ERROR:
+  base: './', 
   plugins: [react()],
 })
