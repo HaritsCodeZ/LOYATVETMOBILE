@@ -32,39 +32,63 @@ export default function HomeSite() {
   return (
     // RESTORE THE SINGLE ROOT DIV
     <div className="homesite-container">
-        {/* Background Image (Static) */}
-        <img className="background-video" src="FinaleBackImage.png" alt="Background Image" />
+      {/* Background Image (Static) */}
+      <img
+        className="background-video"
+        src="FinaleBackImage.png"
+        alt="Background Image"
+      />
 
-        {/* Centered Changing Text */}
-        <div className="center-text">
-            <h2>{messages[current]}</h2>
+      {/* Centered Changing Text */}
+      <div className="center-text">
+        <h2>{messages[current]}</h2>
+      </div>
+
+      {/* Glass Bubbles Section */}
+      <div className="bubble-container">
+        <div className="bubble-row">
+          {/* ✅ Now navigates to ContactMobile page */}
+          <div
+            className="glass-bubble"
+            onClick={() => navigate("/contact-mobile")}
+          >
+            Hubungi Kami
+          </div>
+
+          <div
+            className="glass-bubble"
+            onClick={() => navigate("/team-mobile")} // 👈 Navigate to route
+          >
+            Pasukan Kami
+          </div>
         </div>
 
-        {/* Glass Bubbles Section */}
-        <div className="bubble-container">
-            <div className="bubble-row">
-                <div className="glass-bubble">Hubungi Kami</div>
-                <div className="glass-bubble">Pasukan Kami</div>
-            </div>
-            <div className="bubble-row single">
-                <div className="glass-bubble">Kolej Kami</div>
-            </div>
-        </div>
+        <div className="bubble-row single">
+  <div
+    className="glass-bubble"
+    onClick={() => window.open("https://www.facebook.com/KolejVokasionalBetong", "_blank")}
+    style={{ cursor: "pointer" }}
+  >
+    Kolej Kami
+  </div>
+</div>
 
-        {/* Floating Input Bar */}
-        <div className="ai-input-bar">
-            <input
-                type="text"
-                className="ai-input-field"
-                placeholder="Tulis mesej anda di sini..."
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSend()} // ✅ Enter triggers send
-            />
-            <button className="ai-send-btn" onClick={handleSend}>
-                ➤
-            </button>
-        </div>
+      </div>
+
+      {/* Floating Input Bar */}
+      <div className="ai-input-bar">
+        <input
+          type="text"
+          className="ai-input-field"
+          placeholder="Tulis mesej anda di sini..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSend()} // ✅ Enter triggers send
+        />
+        <button className="ai-send-btn" onClick={handleSend}>
+          ➤
+        </button>
+      </div>
     </div>
-)
+  );
 }
