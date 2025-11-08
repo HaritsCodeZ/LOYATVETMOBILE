@@ -182,8 +182,6 @@ export default function ChatMobile() {
   "- Canteen and other facilities."
 );
 
-
-
     if (has("program") || has("programme"))
       return R(
         "Di Kolej Vokasional Betong, terdapat 8 program yang menarik iaitu program:<br/>" +
@@ -262,6 +260,87 @@ export default function ChatMobile() {
         "The Automotive Technology program trains students in vehicle maintenance, repair, and diagnostics."
       );
     }
+
+    // UCAPAN SALAM PELBAGAI
+    if (has("assalamualaikum")) {
+      return R(
+        "Waalaikumussalam, haa saya pun pandai jawab salam, Ada pertanyaan ke? Jom kita borak tentang KV BETONG atau sebagainya",
+      );
+    }
+
+    if (has("hai")) {
+      return R(
+        "Hai, jom kita borak santai TVET, KVBETONG atau apa je yang awak nak tahu berkenaan saya !",
+      );
+    }
+
+    if (has("hi")) {
+      return R(
+        "Hi there ! let's spend this time with some chit chat! You got any questions about TVET, Vocational Colledge for me?",
+      );
+    }
+
+    if (has("hello")) {
+      return R(
+        "Hello There ! I'm Brother Loya ready to answer your needs ! Hmm, got a question about TVET, Vocational Colledge? I have the answer!",
+      );
+    }
+
+    if (has("selamat pagi ")) {
+      return R(
+        "Selamat Pagi ! Saya dah sedia nak jawab sebarang kemusykilan anda di pagi hari jom!",
+      );
+    }
+
+    if (has("selamat tengah hari ")) {
+      return R(
+        "Selamat tengah hari! panasnya harini, kalau hujan tu maaf lah hehe, ada soalan ke tu mari sini saya jawab!",
+      );
+    }
+
+    if (has("selamat petang")) {
+      return R(
+        "Selamat Petang! Masa petang ni la masa sesuai nak borak-borak. Jom borak tentang KV atau TVET",
+      );
+    }
+
+    if (has("selamat malam")) {
+      return R(
+        "Selamat Malam! fuh malam-malam pun ada soalan eh? boleh saya sentiasa beroperasi 24 jam tanpa henti! anda boleh tanya saya sekarang !",
+      );
+    }
+
+    if (has("good morning")) {
+      return R(
+        "Good Morning! I'm ready to answer any of your questions this morning, let's go!",
+      );
+    }
+
+    if (has("good afternoon")) {
+      return R(
+        "Good afternoon! It's so hot today, but if it's raining, then my apologies, haha. Got a question? Come on, let me answer it!",
+      );
+    }
+
+    if (has("good evening")) {
+      return R(
+        "Good Evening! This evening is the perfect time for a chat. Let's talk about KV or TVET!",
+      );
+    }
+
+     if (has("good night")) {
+       return R(
+        "Good Night! Wow, you have questions even late at night? Sure, I operate 24 hours non-stop! You can ask me now!",
+      );
+    }
+
+    // UCAPAN SALAM PELBAGAI
+    if (has("tvet ")) {
+      return R(
+        "TVET itu adalah Pendidikan dan Latihan Teknikal dan Vokasional. Ia adalah satu bentuk pendidikan yang memberi tumpuan kepada latihan praktikal dan kemahiran teknikal yang selari dengan keperluan industri ",
+      );
+    }
+
 
     // DEFAULT FALLBACK (ADDED FIX)
     return R(
