@@ -43,7 +43,7 @@ export default function ChatMobile() {
     const lang = enScore > 0 && msScore === 0 ? "en" : "ms";
     const R = (ms, en) => (lang === "en" ? en : ms);
 
-  // UPDATE 1 - KEMASUKAN MALAY
+  // UPDATE 1 - KEMASUKAN MALAY HARITS SPECIALS
     if (
         has("kemasukan") || 
         has("masuk") || 
@@ -54,37 +54,91 @@ export default function ChatMobile() {
           return "Untuk kemasukan dan pendaftaran pelajar ke Kolej Vokasional Betong (KVB), di laman https://spskt4.moe.gov.my/.Minat nak masuk KV? Terutamanya KV BETONG? Tanyalah apa yang menarik di KV BETONG!";
         }
 
-  // UPDATE 1 - KEMASUKAN ENGLISH
+  // UPDATE 1 - KEMASUKAN ENGLISH HARITS SPECIALS
     if (
         has("admission") || 
         has("register") ||
         has("application") ||
          has("apply")
       ) {
-          return "For student admission and registration to Kolej Vokasional Betong (KVB), at the website https://spskt4.moe.gov.my/”.Interested in joining a Vocational College? Especially KV BETONG? Ask me anything about what’s interesting at KV BETONG.";
+          return "For student admission and registration to Kolej Vokasional Betong (KVB), at the website https://spskt4.moe.gov.my/”.Interested in joining a Vocational College? Especially KV BETONG? Ask me anything about what’s interesting at KV BETONG!";
         }
   
-  // UPDATE 2 - YURAN PENGAJIAN
+  // UPDATE 2 - YURAN PENGAJIAN MALAY HARITS SPECIALS
     if (
         has("yuran") || 
         has("kos") || 
         has("bayaran") ||
         has("sumbangan") 
       ) {
-          return "Pengajian di KV Betong adalah percuma. Hanya ada bayaran sumbangan PIBG, modul, pakaian seragam, dll.";
+          return "Pengajian di KV Betong adalah percuma. Hanya ada bayaran sumbangan PIBG sebanyak RM50, modul, pakaian seragam, dll.";
         }
 
-    if (has("biasiswa") || has("scholarship"))
-      return R(
-        "KVB menawarkan biasiswa tertentu kepada pelajar cemerlang. Semak laman rasmi untuk butiran.",
-        "KVB offers scholarships to excellent students. Please check the official website for details."
-      );
+  // UPDATE 2 - YURAN PENGAJIAN ENGLISH HARITS SPECIALS
+    if (
+        has("fee") || 
+        has("cost") || 
+        has("tuition") ||
+        has("payment") ||
+        has("contribution") 
+      ) {
+          return "Education at KV Betong is free. There is only a PIBG contribution of RM50, plus fees for modules, uniforms, etc.";
+        }
+  
+  // UPDATE 3 - BIASISWA / BANTUAN KEWANGAN MALAY HARITS SPECIALS
+    if (
+        has("biasiswa") || 
+        has("bantuan") || 
+        has("tajaan") || 
+        has("pelajar kurang mampu") || 
+        has("sokongan")
+      ) {
+          return "KVB menawarkan biasiswa dan bantuan kewangan kepada pelajar yang memerlukan. Sila semak laman rasmi untuk maklumat lanjut.";
+        }
 
-    if (has("asrama") || has("hostel"))
-      return R(
-        "Asrama KVB dilengkapi dengan kemudahan asas yang selesa untuk pelajar lelaki dan perempuan.",
-        "KVB hostels provide comfortable basic facilities for both male and female students."
-      );
+  // UPDATE 3 - SCHOLARSHIP / FINANCIAL AID ENGLISH HARITS SPECIALS
+    if (
+        has("scholarship") || 
+        has("aid") || 
+        has("financial aid") || 
+        has("assistance") || 
+        has("grant")
+      ) {
+          return "KVB offers scholarships and financial aid to students in need. Please check the official website for more information.";
+        }
+
+  // UPDATE 4 - ASRAMA MALAY HARITS SPECIALS
+    if (
+    has("asrama") || 
+    has("residensi") || 
+    has("hostel") || 
+    has("kediaman")
+) {
+    return "Di KV BETONG, terdapat residensi/asrama tersedia untuk pelajar asrama dimana:<br/>" +
+        "- RESIDENSI A HINGGA RESIDENSI E = PELAJAR LELAKI<br/>" +
+        "- RESIDENSI F HINGGA RESIDENSI G = PELAJAR PEREMPUAN<br/><br/>" +
+        "Dan kemudahan yang disediakan seperti:<br/>" +
+        "- Water Dispenser Panas Dan Sejuk<br/>" +
+        "- Vending Machine<br/>" +
+        "- Bilik Belajar bersoket<br/>" +
+        "dan pelbagai lagi. MARI KE KV BETONG !";
+}
+  // UPDATE 4 - ASRAMA ENGLISH HARITS SPECIALS
+    if (
+    has("dormitory") || 
+    has("hostel") || 
+    has("residence") || 
+    has("accommodation")
+) {
+    return "At KV BETONG, dormitory accommodation is available for boarding students where:<br/>" +
+        "- RESIDENCE A TO RESIDENCE E = MALE STUDENTS<br/>" +
+        "- RESIDENCE F TO RESIDENCE G = FEMALE STUDENTS<br/><br/>" +
+        "Facilities provided include:<br/>" +
+        "- Hot & Cold Water Dispenser<br/>" +
+        "- Vending Machine<br/>" +
+        "- Study Rooms with Power Sockets<br/>" +
+        "and many more. COME TO KV BETONG!";
+}
 
     if (has("syarat") || has("requirement") || has("requirements"))
       return R(
