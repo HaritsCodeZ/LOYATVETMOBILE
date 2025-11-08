@@ -43,17 +43,36 @@ export default function ChatMobile() {
     const lang = enScore > 0 && msScore === 0 ? "en" : "ms";
     const R = (ms, en) => (lang === "en" ? en : ms);
 
-    if (has("kemasukan") || has("admission"))
-      return R(
-        "Untuk kemasukan, sila layari laman rasmi KVB untuk borang dan tarikh kemasukan.",
-        "For admission details, please visit the official KVB website for forms and intake dates."
-      );
+  // UPDATE 1 - KEMASUKAN MALAY
+    if (
+        has("kemasukan") || 
+        has("masuk") || 
+        has("pendaftaran") || 
+        has("permohonan") || 
+        has("daftar")
+      ) {
+          return "Untuk kemasukan dan pendaftaran pelajar ke Kolej Vokasional Betong (KVB), di laman https://spskt4.moe.gov.my/.Minat nak masuk KV? Terutamanya KV BETONG? Tanyalah apa yang menarik di KV BETONG!";
+        }
 
-    if (has("yuran") || has("fee") || has("fees"))
-      return R(
-        "Yuran bergantung pada kursus dan tempoh pengajian. Sila rujuk pejabat kewangan KVB.",
-        "Fees depend on the course and study duration. Please refer to KVB's finance office."
-      );
+  // UPDATE 1 - KEMASUKAN ENGLISH
+    if (
+        has("admission") || 
+        has("register") ||
+        has("application") ||
+         has("apply")
+      ) {
+          return "For student admission and registration to Kolej Vokasional Betong (KVB), at the website https://spskt4.moe.gov.my/”.Interested in joining a Vocational College? Especially KV BETONG? Ask me anything about what’s interesting at KV BETONG.";
+        }
+  
+  // UPDATE 2 - YURAN PENGAJIAN
+    if (
+        has("yuran") || 
+        has("kos") || 
+        has("bayaran") ||
+        has("sumbangan") 
+      ) {
+          return "Pengajian di KV Betong adalah percuma. Hanya ada bayaran sumbangan PIBG, modul, pakaian seragam, dll.";
+        }
 
     if (has("biasiswa") || has("scholarship"))
       return R(
