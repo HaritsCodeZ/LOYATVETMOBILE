@@ -43,108 +43,99 @@ export default function ChatMobile() {
     const lang = enScore > 0 && msScore === 0 ? "en" : "ms";
     const R = (ms, en) => (lang === "en" ? en : ms);
 
-  // UPDATE 1 - KEMASUKAN MALAY HARITS SPECIALS
-    if (
-        has("kemasukan") || 
-        has("masuk") || 
-        has("pendaftaran") || 
-        has("permohonan") || 
-        has("daftar")
-      ) {
-          return "Untuk kemasukan dan pendaftaran pelajar ke Kolej Vokasional Betong (KVB), di laman https://spskt4.moe.gov.my/.Minat nak masuk KV? Terutamanya KV BETONG? Tanyalah apa yang menarik di KV BETONG!";
-        }
+    // ==============================
+    // === REPLY RULES START HERE ===
+    // ==============================
 
-  // UPDATE 1 - KEMASUKAN ENGLISH HARITS SPECIALS
-    if (
-        has("admission") || 
-        has("register") ||
-        has("application") ||
-         has("apply")
-      ) {
-          return "For student admission and registration to Kolej Vokasional Betong (KVB), at the website https://spskt4.moe.gov.my/”.Interested in joining a Vocational College? Especially KV BETONG? Ask me anything about what’s interesting at KV BETONG!";
-        }
-  
-  // UPDATE 2 - YURAN PENGAJIAN MALAY HARITS SPECIALS
-    if (
-        has("yuran") || 
-        has("kos") || 
-        has("bayaran") ||
-        has("sumbangan") 
-      ) {
-          return "Pengajian di KV Betong adalah percuma. Hanya ada bayaran sumbangan PIBG sebanyak RM50, modul, pakaian seragam, dll.";
-        }
+    // UPDATE 5 - SYARAT KEMASUKAN MALAY SPECIAL HARITS
+    if (has("syarat")) {
+      return (
+        "Untuk kemasukan SVM di KV BETONG:<br/>" +
+        "- Calon perlu memperoleh sekurang-kurangnya Tahap Penguasaan 3 bagi Pentaksiran Bilik Darjah iaitu:<br/>" +
+        "- Bahasa Melayu<br/>" +
+        "- Bahasa Inggeris<br/>" +
+        "- Matematik<br/>" +
+        "- Sains<br/>" +
+        "- Reka Bentuk Dan Teknologi Atau Asas Sains Komputer<br/><br/>" +
+        "Untuk kemasukan DVM pula di KV BETONG:<br/>" +
+        "- PNGK akademik ≥ 2.00<br/>" +
+        "- Sekurang-kurangnya 3 kepujian SVM<br/>" +
+        "- PNGK vokasional ≥ 2.67<br/>" +
+        "- Untuk program Teknologi Maklumat, Matematik wajib gred C ke atas<br/><br/>"
+      );
+    }
 
-  // UPDATE 2 - YURAN PENGAJIAN ENGLISH HARITS SPECIALS
-    if (
-        has("fee") || 
-        has("cost") || 
-        has("tuition") ||
-        has("payment") ||
-        has("contribution") 
-      ) {
-          return "Education at KV Betong is free. There is only a PIBG contribution of RM50, plus fees for modules, uniforms, etc.";
-        }
-  
-  // UPDATE 3 - BIASISWA / BANTUAN KEWANGAN MALAY HARITS SPECIALS
-    if (
-        has("biasiswa") || 
-        has("bantuan") || 
-        has("tajaan") || 
-        has("pelajar kurang mampu") || 
-        has("sokongan")
-      ) {
-          return "KVB menawarkan biasiswa dan bantuan kewangan kepada pelajar yang memerlukan. Sila semak laman rasmi untuk maklumat lanjut.";
-        }
+    if (has("requirements")) {
+      return (
+        "For SVM admission at KV BETONG:<br/>" +
+        "- Candidates must obtain at least Level 3 in Classroom Assessment for:<br/>" +
+        "- Malay Language<br/>" +
+        "- English Language<br/>" +
+        "- Mathematics<br/>" +
+        "- Science<br/>" +
+        "- Design & Technology or Basic Computer Science<br/><br/>" +
+        "For DVM admission at KV BETONG:<br/>" +
+        "- Academic GPA ≥ 2.00<br/>" +
+        "- At least 3 SVM credits<br/>" +
+        "- Vocational GPA ≥ 2.67<br/>" +
+        "- For Information Technology program, Mathematics grade C or above is required<br/><br/>"
+      );
+    }
 
-  // UPDATE 3 - SCHOLARSHIP / FINANCIAL AID ENGLISH HARITS SPECIALS
-    if (
-        has("scholarship") || 
-        has("aid") || 
-        has("financial aid") || 
-        has("assistance") || 
-        has("grant")
-      ) {
-          return "KVB offers scholarships and financial aid to students in need. Please check the official website for more information.";
-        }
+    // UPDATE 1 - KEMASUKAN MALAY HARITS SPECIALS
+    if (has("masuk") || has("pendaftaran") || has("permohonan") || has("daftar")) {
+      return "Untuk kemasukan dan pendaftaran pelajar ke Kolej Vokasional Betong (KVB), di laman https://spskt4.moe.gov.my/. Minat nak masuk KV? Terutamanya KV BETONG? Tanyalah apa yang menarik di KV BETONG!";
+    }
 
-  // UPDATE 4 - ASRAMA MALAY HARITS SPECIALS
-    if (
-    has("asrama") || 
-    has("residensi") || 
-    has("hostel") || 
-    has("kediaman")
-) {
-    return "Di KV BETONG, terdapat residensi/asrama tersedia untuk pelajar asrama dimana:<br/>" +
+    // UPDATE 1 - KEMASUKAN ENGLISH HARITS SPECIALS
+    if (has("admission") || has("register") || has("application") || has("apply")) {
+      return "For student admission and registration to Kolej Vokasional Betong (KVB), at the website https://spskt4.moe.gov.my/. Interested in joining a Vocational College? Especially KV BETONG? Ask me anything about what’s interesting at KV BETONG!";
+    }
+
+    // UPDATE 2 - YURAN
+    if (has("yuran") || has("kos") || has("bayaran") || has("sumbangan")) {
+      return "Pengajian di KV Betong adalah percuma. Hanya ada bayaran sumbangan PIBG sebanyak RM50, modul, pakaian seragam, dll.";
+    }
+
+    if (has("fee") || has("cost") || has("tuition") || has("payment") || has("contribution")) {
+      return "Education at KV Betong is free. There is only a PIBG contribution of RM50, plus fees for modules, uniforms, etc.";
+    }
+
+    // UPDATE 3 - BIASISWA
+    if (has("biasiswa") || has("bantuan") || has("tajaan") || has("sokongan")) {
+      return "KVB menawarkan biasiswa dan bantuan kewangan kepada pelajar yang memerlukan. Sila semak laman rasmi untuk maklumat lanjut.";
+    }
+
+    if (has("scholarship") || has("aid") || has("financial aid") || has("assistance") || has("grant")) {
+      return "KVB offers scholarships and financial aid to students in need. Please check the official website for more information.";
+    }
+
+    // UPDATE 4 - ASRAMA
+    if (has("asrama") || has("residensi") || has("kediaman")) {
+      return (
+        "Di KV BETONG, terdapat residensi/asrama tersedia untuk pelajar asrama dimana:<br/>" +
         "- RESIDENSI A HINGGA RESIDENSI E = PELAJAR LELAKI<br/>" +
-        "- RESIDENSI F HINGGA RESIDENSI G = PELAJAR PEREMPUAN<br/><br/>" +
+        "- RESIDENSI F HINGGA RESIDENSI H = PELAJAR PEREMPUAN<br/><br/>" +
         "Dan kemudahan yang disediakan seperti:<br/>" +
         "- Water Dispenser Panas Dan Sejuk<br/>" +
         "- Vending Machine<br/>" +
         "- Bilik Belajar bersoket<br/>" +
-        "dan pelbagai lagi. MARI KE KV BETONG !";
-}
-  // UPDATE 4 - ASRAMA ENGLISH HARITS SPECIALS
-    if (
-    has("dormitory") || 
-    has("hostel") || 
-    has("residence") || 
-    has("accommodation")
-) {
-    return "At KV BETONG, dormitory accommodation is available for boarding students where:<br/>" +
+        "dan pelbagai lagi. MARI KE KV BETONG !"
+      );
+    }
+
+    if (has("dormitory") || has("residence") || has("accommodation")) {
+      return (
+        "At KV BETONG, dormitory accommodation is available for boarding students where:<br/>" +
         "- RESIDENCE A TO RESIDENCE E = MALE STUDENTS<br/>" +
-        "- RESIDENCE F TO RESIDENCE G = FEMALE STUDENTS<br/><br/>" +
+        "- RESIDENCE F TO RESIDENCE H = FEMALE STUDENTS<br/><br/>" +
         "Facilities provided include:<br/>" +
         "- Hot & Cold Water Dispenser<br/>" +
         "- Vending Machine<br/>" +
         "- Study Rooms with Power Sockets<br/>" +
-        "and many more. COME TO KV BETONG!";
-}
-
-    if (has("syarat") || has("requirement") || has("requirements"))
-      return R(
-        "Syarat kemasukan berbeza mengikut kursus. Minimum SPM dengan kredit dalam subjek berkaitan diperlukan.",
-        "Entry requirements vary by course. Minimum SPM with credits in relevant subjects is required."
+        "and many more. COME TO KV BETONG!"
       );
+    }
 
     if (has("iktiraf") || has("recognition"))
       return R(
@@ -152,29 +143,46 @@ export default function ChatMobile() {
         "KVB is recognized by the Department of Skills Development (DSD) and the Ministry of Human Resources."
       );
 
-    if (has("kursus") || has("course") || has("courses"))
-      return R(
-        "KVB menawarkan pelbagai kursus TVET termasuk teknologi maklumat, kejuruteraan dan perniagaan.",
-        "KVB offers various TVET courses including information technology, engineering, and business."
-      );
-
     if (has("pengarah") || has("director"))
       return R(
-        "Pengarah KVB mengetuai pengurusan kolej dan memastikan kualiti pendidikan TVET terjamin.",
+        "Pengarah KVB iaitu Encik Mohd Amin Bin Mohd Noor mengetuai pengurusan kolej dan memastikan kualiti pendidikan TVET terjamin.",
         "The Director of KVB leads the college management and ensures quality TVET education."
       );
 
-    if (has("hubungi") || has("contact"))
+    if (has("hubungi") || has("hubung") || has("berhubung") || has("contact"))
+
       return R(
-        "Anda boleh hubungi KVB melalui telefon, emel, atau laman web rasmi untuk maklumat lanjut.",
-        "You can contact KVB via phone, email, or the official website for more information."
+        "Anda boleh hubungi KVB di talian 083 472 160 atau 083 472 729<br/>" +
+        "Emel pula yha2401@moe.edu.my",
+        "You may contact KVB at 083 472 160 or 083 472 729<br/>" +
+        "For email inquiries, please use yha2401@moe.edu.my",
       );
 
-    if (has("dewan") || has("hall"))
+    if (has("kemudahan") || has("fasiliti") || has("facilities") || has("facility") || has("amenities") || has("infrastructure"))
+
       return R(
-        "Dewan KVB digunakan untuk perhimpunan, program rasmi, dan aktiviti pelajar.",
-        "The KVB hall is used for assemblies, official programs, and student activities."
-      );
+  "Antara kemudahan di KVB termasuk:<br/>" +
+  "- Makmal School Net: Makmal Komputer<br/>" +
+  "- Padang Bola Sepak/Ragbi: Tempat sukan lasak<br/>" +
+  "- Gelanggang Futsal/Bola Keranjang/Takraw/Bola Tampar: Aktiviti sukan lasak<br/>" +
+  "- Dewan Sri Kenanga: Tempat berhimpun pelajar dan guru setiap bulan<br/>" +
+  "- Dewan Perdana: Dewan makan untuk pelajar asrama<br/>" +
+  "- Surau Ibnu Khaldun: Tempat ibadah bagi pelajar Muslim<br/>" +
+  "- Blok Kuliah: Lokasi kelas dan bengkel diadakan<br/>" +
+  "- Kantin dan kemudahan lain.",
+
+  "Some of the facilities at KVB include:<br/>" +
+  "- School Net Lab: Computer laboratory<br/>" +
+  "- Football/Rugby Field: For outdoor and tough sports<br/>" +
+  "- Futsal/Basketball/Takraw/Volleyball Courts: For various sports activities<br/>" +
+  "- Dewan Sri Kenanga: Venue for monthly student and teacher assemblies<br/>" +
+  "- Dewan Perdana: Dining hall for boarding students<br/>" +
+  "- Surau Ibnu Khaldun: Prayer hall for Muslim students<br/>" +
+  "- Lecture Block: Location for classes and workshops<br/>" +
+  "- Canteen and other facilities."
+);
+
+
 
     if (has("program") || has("programme"))
       return R(
@@ -198,15 +206,67 @@ export default function ChatMobile() {
           "* Automotive Technology"
       );
 
-    if (has("tempoh") || has("duration"))
+    // === PROGRAM SPECIFICS ===
+    if (has("teknologi kimpalan") || has("welding")) {
       return R(
-        "Tempoh pengajian biasanya antara 2 hingga 3 tahun bergantung pada program.",
-        "The study duration is usually between 2 to 3 years depending on the program."
+        "Program Teknologi Kimpalan melatih pelajar dalam teknik kimpalan moden, keselamatan industri, dan kemahiran logam/fabrikasi.",
+        "The Welding Technology program trains students in modern welding techniques, industrial safety, and metal/fabrication skills."
       );
+    }
 
+    if (has("teknologi elektrik") || has("electrical")) {
+      return R(
+        "Program Teknologi Elektrik melatih pelajar dalam pemasangan, penyelenggaraan, dan pembaikan sistem elektrik serta kawalan motor.",
+        "The Electrical Technology program trains students in installation, maintenance, and repair of electrical systems and motor control."
+      );
+    }
+
+    if (has("teknologi sistem komputer") || has("computer system") || has("rangkaian") || has("network")) {
+      return R(
+        "Program Sistem Komputer & Rangkaian melatih pelajar dalam pemasangan, penyelenggaraan, dan pengurusan rangkaian IT.",
+        "The Computer System & Network Technology program trains students in IT network setup, maintenance, and management."
+      );
+    }
+
+    if (has("perakaunan") || has("accounting")) {
+      return R(
+        "Program Perakaunan melatih pelajar dalam kemahiran kewangan, penyediaan laporan akaun, audit, dan penggunaan perisian perakaunan moden.",
+        "The Accounting program trains students in financial skills, preparing accounts, auditing, and using modern accounting software."
+      );
+    }
+
+    if (has("teknologi pemesinan industri") || has("industrial machining")) {
+      return R(
+        "Program Pemesinan Industri melatih pelajar menggunakan mesin CNC, AutoCAD, dan teknik pembuatan berketepatan tinggi.",
+        "The Industrial Machining Technology program trains students to operate CNC machines, AutoCAD, and high-precision manufacturing techniques."
+      );
+    }
+
+    if (has("teknologi pembinaan") || has("construction technology")) {
+      return R(
+        "Program Teknologi Pembinaan melatih pelajar dalam kerja konkrit, kayu, pemasangan bangunan, dan lukisan teknikal.",
+        "The Construction Technology program trains students in concrete work, carpentry, building assembly, and technical drawing."
+      );
+    }
+
+    if (has("hospitaliti seni kulinari") || has("culinary arts") || has("cooking")) {
+      return R(
+        "Program Hospitaliti Seni Kulinari melatih pelajar dalam masakan tempatan & antarabangsa, pengurusan dapur, dan hiasan makanan.",
+        "The Hospitality Culinary Arts program trains students in local & international cuisine, kitchen management, and food presentation."
+      );
+    }
+
+    if (has("teknologi automotif") || has("automotive")) {
+      return R(
+        "Program Teknologi Automotif melatih pelajar dalam penyelenggaraan, baik pulih, dan diagnostik kenderaan bermotor.",
+        "The Automotive Technology program trains students in vehicle maintenance, repair, and diagnostics."
+      );
+    }
+
+    // DEFAULT FALLBACK (ADDED FIX)
     return R(
-      "Sistem ini menyokong soalan berkaitan KVB dan TVET. Cuba: 'apa itu KVB', 'syarat masuk DVM', atau 'dewan KVB'.",
-      "This system answers KVB and TVET related questions. Try: 'what is KVB', 'DVM requirements', or 'KVB halls'."
+      "Maaf, saya belum ada maklumat untuk soalan itu. Cuba tanya dengan cara lain!",
+      "Sorry, I don’t have information for that question yet. Try asking it another way!"
     );
   };
 
