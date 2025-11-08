@@ -1,0 +1,384 @@
+/* === ContactMobile.css === */
+
+/* Background magic */
+.contact-container {
+  position: relative;
+  height: 100vh;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background: linear-gradient(135deg, #3a0ca3, #f77f00);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  z-index: 1; /* ✅ ensure this layer stays on top */
+}
+
+
+/* Glowy swirl bg */
+.contact-gradient-bg {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 153, 0, 0.3),
+    rgba(255, 0, 150, 0.15),
+    transparent
+  );
+  filter: blur(90px);
+  z-index: 0;
+  animation: pulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+/* Header */
+.contact-header {
+  z-index: 2;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contact-icon {
+  color: #ffd166;
+  width: 40px;
+  height: 40px;
+  position: fixed;        /* fixed ensures it stays relative to viewport */
+  top: 1rem;              /* adjust distance from top */
+  left: 100%;              /* center horizontally */
+  transform: translateX(-50%);
+  z-index: 9999;          /* extremely high z-index ensures it is above everything */
+  animation: sparkle 2s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.contact-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Card */
+.contact-card {
+  z-index: 2;
+  top: 45%;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+  transition: all 0.4s ease;
+  margin-top: -7rem;
+  cursor: pointer;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 165, 0, 0.5);
+}
+
+.contact-info {
+  text-align: center;
+}
+
+.contact-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.contact-role {
+  font-size: 0.9rem;
+  color: #ffe8cc;
+  margin-bottom: 0.5rem;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.contact-phone-icon {
+  color: #ffd166;
+  width: 18px;
+  height: 18px;
+}
+
+.contact-number {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Footer */
+.contact-footer {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-button {
+  background: linear-gradient(270deg, #ff7300, #a050ff, #ff7300);
+  width: 130%;
+  background-size: 300% 300%;
+  animation: gradientMove 6s ease-in-out infinite; /* ✨ Smooth animated gradient */
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 40px;
+  padding: 1rem 2.5rem;
+  color: #fff;
+  font-weight: 700; /* ✅ Bolder text */
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  box-shadow:
+    0 0 15px rgba(255, 115, 0, 0.35),
+    0 0 25px rgba(160, 80, 255, 0.35);
+  backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
+}
+
+.contact-button:hover {
+  transform: scale(1.06);
+  box-shadow:
+    0 0 25px rgba(255, 115, 0, 0.5),
+    0 0 35px rgba(160, 80, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+/* 🔁 Reuse the same keyframes from your AI input bar */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.contact-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 100, 0, 0.6);
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* === Container === */
+.contact-container {
+  position: relative;
+  height: 100vh;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background: linear-gradient(135deg, #3a0ca3, #f77f00);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  z-index: 1;
+}
+
+/* === Glowy gradient background === */
+.contact-gradient-bg {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 153, 0, 0.3),
+    rgba(255, 0, 150, 0.15),
+    transparent
+  );
+  filter: blur(90px);
+  z-index: 0;
+  animation: pulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); opacity: 0.9; }
+  to   { transform: scale(1.1); opacity: 0.7; }
+}
+
+/* === Logo === */
+.tvet-logo-mobile {
+  width: -40px; /* ✅ fixed size */
+  height: auto;
+  cursor: pointer;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+  transition: transform 0.4s ease, filter 0.4s ease;
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.tvet-logo-mobile:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.9))
+          drop-shadow(0 0 20px rgba(160, 80, 255, 0.9));
+  animation: logoGlow 2.5s infinite alternate;
+}
+
+@keyframes logoGlow {
+  0% {
+    filter: drop-shadow(0 0 12px rgba(255, 165, 0, 0.7))
+            drop-shadow(0 0 18px rgba(160, 80, 255, 0.7));
+  }
+  100% {
+    filter: drop-shadow(0 0 20px rgba(255, 165, 0, 1))
+            drop-shadow(0 0 30px rgba(160, 80, 255, 1));
+  }
+}
+
+/* === Header === */
+.contact-header {
+  z-index: 2;
+  text-align: center;
+  margin-top: 5rem; /* account for logo */
+}
+
+.contact-icon {
+  color: #ffd166;
+  width: 40px;
+  height: 40px;
+  animation: sparkle 2s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50%      { transform: scale(1.2); opacity: 1; }
+}
+
+.contact-title { font-size: 2rem; font-weight: 700; margin-top: 0.5rem; }
+.contact-subtitle { font-size: 0.95rem; opacity: 0.9; margin-top: 0.5rem; line-height: 1.5; }
+
+/* === Card === */
+.contact-card {
+  position: absolute;      
+  z-index: 2;
+  top: 55%;                /* ← adjust this to move up/down */
+  left: 5%;                /* ← adjust this to position horizontally */
+  width: 90%;              /* card width */
+  max-width: 400px;        
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+  cursor: pointer;
+}
+
+
+
+
+.contact-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 165, 0, 0.5);
+}
+
+.contact-info { text-align: center; }
+.contact-name { font-size: 1.3rem; font-weight: 600; color: #fff; }
+.contact-role { font-size: 0.9rem; color: #ffe8cc; margin-bottom: 0.5rem; font-weight: bold; }
+.contact-details { display: flex; justify-content: center; align-items: center; gap: 0.4rem; margin-top: 0.5rem; }
+.contact-phone-icon { color: #ffd166; width: 18px; height: 18px; }
+.contact-number { font-size: 1rem; font-weight: 500; }
+
+/* === Footer === */
+.contact-footer {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* === Button with animated gradient === */
+.contact-button {
+  background: linear-gradient(270deg, #ff7300, #a050ff, #ff7300);
+  background-size: 300% 300%;
+  animation: gradientMove 6s ease-in-out infinite;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 40px;
+  padding: 1rem 2.5rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 90%;
+  cursor: pointer;
+  box-shadow:
+    0 0 15px rgba(255, 115, 0, 0.35),
+    0 0 25px rgba(160, 80, 255, 0.35);
+  backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
+}
+
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Footer note === */
+.footer-note {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  text-align: center;
+  line-height: 1.4;
+}
