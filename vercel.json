@@ -23,6 +23,10 @@
     {
       "source": "/VideoMobileFinale.mp4",
       "destination": "/public/VideoMobileFinale.mp4"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
