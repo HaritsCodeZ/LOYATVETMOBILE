@@ -334,10 +334,17 @@ export default function ChatMobile() {
       );
     }
 
-    // UCAPAN SALAM PELBAGAI
+    // UCAPAN SALAM PELBAGAI habis le
     if (has("tvet ")) {
       return R(
         "TVET itu adalah Pendidikan dan Latihan Teknikal dan Vokasional. Ia adalah satu bentuk pendidikan yang memberi tumpuan kepada latihan praktikal dan kemahiran teknikal yang selari dengan keperluan industri ",
+      );
+    }
+
+    if (has("visi ")|| has("misi")|| has("vision")|| has("mission")) {
+      return R(
+        "VISI DAN MISI KOLEJ VOKASIONAL BETONG:</br> "+
+        "VISI - Membudayakan amalan persekitaran EKSA (e-Fasiliti, Kebersihan, Keselamatan, Kesihatan) melalui disiplin diri, kerja berpasukan, kreativiti dan inovasi.",
       );
     }
 
